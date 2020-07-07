@@ -35,11 +35,8 @@ int solution(vector<vector<int>> board, vector<int> moves) {
         in = board[lineEnd[moves[i]-1]][moves[i]-1];
         if(result[0] == in)
         {
-            do
-            {
-                result.pop_front();
-                answer+=2;
-            }while(result[0] == result[1]);
+            result.pop_front();
+            answer+=2;
         }
         else
         {
@@ -59,8 +56,7 @@ int main()
                                    {3, 5, 1, 3, 1}};
     vector<int> moves = {1, 5, 3, 5, 1, 2, 1, 4};
 
-    cout<<*((&moves[0])+1)<<endl;
     int answer = solution(board, moves);
-    cout<<"A: "<<answer;
+    cout<<"Answer: "<<answer;
     return 0;
 }
