@@ -6,20 +6,21 @@
 #include <algorithm>
 
 //tuple 사용법
-//tuple get으로 참조
+//tuple 참조 : get<i>(tuple)
 //vector, map에 tuple 넣기
-//tuple vector sorting
+//vector<tuple> sorting
 //const
-//최대인 genre -> genre를 key로 하는 map
+//최대인 genre 찾아야됨 -> genre를 key로 하는 map
 //더 큰 plays -> plays를 key로 하는 map (x)
 //genre를 key로 하는 map을 plays로 정렬
 //map의 value로 정렬하기는 어렵다 (vertor로 복사해서 정렬함)
 //map의 key는 변경이 어렵다
-//multimap은 insert로만
+//multimap은 insert로만?
+//map에서 value참조 : map.find()->second
 using namespace std;
 
-bool cmp(const pair<string,int> &a, const pair<string,int> &b){
-    return ( a.second > b.second );
+bool cmp(const tuple<string,int,int> &a, const tuple<string,int,int> &b){
+    return ( get<1>(a) > get<1>(b) );
 }
 
 bool cmp_arr(const pair<string,int> &a, const pair<string,int> &b){
@@ -28,13 +29,12 @@ bool cmp_arr(const pair<string,int> &a, const pair<string,int> &b){
 
 vector<int> solution(vector<string> genres, vector<int> plays) {
     vector<int> answer;
-    multimap<string,int> arr;
+    multimap<string,vector<int>> arr;
     vector<tuple<string,int,int>> arr_sorting;
     map<string,int> genres_playing;
 
     for(int i=0; i<genres.size(); i++){
         arr_sorting.push_back(make_tuple(genres[i], plays[i],i));
-        //arr[genres[i]] = {plays[i], i};
         if( genres_playing.count(genres[i]) ){
             genres_playing[genres[i]] += plays[i];
         }else{
@@ -44,18 +44,21 @@ vector<int> solution(vector<string> genres, vector<int> plays) {
 
     vector<pair<string,int>> genres_sorting;
     copy(genres_playing.begin(), genres_playing.end(), back_inserter<vector<pair<string,int>>>(genres_sorting));
-    sort(genres_sorting.begin(), genres_sorting.end(), cmp);
+    sort(genres_sorting.begin(), genres_sorting.end(), cmp_arr);
 
     sort(arr_sorting.begin(), arr_sorting.end(), cmp);
     for(int i=0; i<arr_sorting.size(); i++){
-        arr.insert(tuple<string,int,int>(arr_sorting[i].first, arr_sorting[i].second));
-        //arr[arr_sorting[i].first] = arr_sorting[i].second;
+        arr.insert(pair<string,vector<int>>(get<0>(arr_sorting[i]), {get<1>(arr_sorting[i]), get<2>(arr_sorting[i])}));
     }
-    cout<<genres_sorting[0].first;
-    answer.push_back((*arr.find(genres_sorting[0].first)).second);
-
-    //sort(arr.begin(), arr.end(), cmp_arr);
-    //*max_element(genres_playing)
+    for(int i=0; i<genres_sorting.size(); i++){
+        for(int j=0; j<2; j++){
+            string best_genre = genres_sorting[i].first;
+            auto this_iter = arr.find(best_genre);
+            if(this_iter == arr.end()) break;
+            answer.push_back(this_iter->second[1]);
+            arr.erase(this_iter);
+        }
+    }
 
 
     return answer;
