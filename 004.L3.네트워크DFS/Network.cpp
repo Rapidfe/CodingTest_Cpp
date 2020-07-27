@@ -24,9 +24,11 @@ int solution(int n, vector<vector<int>> computers) {
         isEnd.push_back(1);
     }
     for(int i = 0; i<n; i++){
-        if(isEnd[i] == 1) answer++;
-        isEnd = dfs(i, isEnd, computers);
-        cout<<endl;
+        if(isEnd[i] == 1){
+            answer++;
+            isEnd = dfs(i, isEnd, computers);
+            cout<<endl;
+        }
     }
 
     return answer;

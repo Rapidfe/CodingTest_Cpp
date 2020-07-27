@@ -22,6 +22,7 @@ string solution(vector<string> participant, vector<string> completion) {
         if(isEnd)
         {
             answer = i;
+            break;
         }
     }
     return answer;
