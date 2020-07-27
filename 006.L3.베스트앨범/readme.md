@@ -13,23 +13,15 @@ https://programmers.co.kr/learn/courses/30/lessons/42579
 
 
 
-
-
+```
 1. 최대인 genre 찾기 -> (key, value) = (genre, palys)인 map 생성
 
 2. 가장 큰 plays -> genre를 key로 하는 map을 plays(map의 value)로 정렬
+   정렬하기 위해 map을 vector로 복사하기: copy( m1.begin(),                                                                           m1.end(),                                                                             back_inserter<>(v1) )
 
-   정렬하기 위해 map을 vector로 복사하기: copy( m1.begin(),
-
-   ​                                                                                  m1.end(),
-
-   ​                                                                                  back_inserter<>(v1) )
-
-3. i를 find하기 위해 {genre, plays, i}를 담은 multimap을 plays로 정렬 ()
-
+3. i를 find하기 위해 {genre, plays, i}를 담은 multimap을 plays로 정렬
    정렬을 위해 vector<tuple> 먼저 생성
-
    plays로 정렬 후 vector를 (key, value) = (genre, {plays, i})인 map으로 복사
 
 4. 가장 큰 plays의 genre(key)를 multimap(key)에서 find
-
+```
