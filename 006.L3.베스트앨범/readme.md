@@ -13,6 +13,8 @@ https://programmers.co.kr/learn/courses/30/lessons/42579
 
 
 
+
+
 1. 최대인 genre 찾기 -> (key, value) = (genre, palys)인 map 생성
 
 2. 가장 큰 plays -> genre를 key로 하는 map을 plays(map의 value)로 정렬
