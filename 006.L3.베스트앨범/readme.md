@@ -21,9 +21,9 @@ https://programmers.co.kr/learn/courses/30/lessons/42579
 
    정렬하기 위해 map을 vector로 복사하기: copy( m1.begin(),
 
-   ​                                                                                  m1.end(),
+                                                                                     m1.end(),
 
-   ​                                                                                  back_inserter<>(v1) )
+                                                                                     back_inserter<>(v1) )
 
 3. i를 find하기 위해 {genre, plays, i}를 담은 multimap을 plays로 정렬 ()
 
