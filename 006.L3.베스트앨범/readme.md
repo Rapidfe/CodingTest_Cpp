@@ -9,7 +9,7 @@ https://programmers.co.kr/learn/courses/30/lessons/42579
 
 ---- tuple 사용법 ----
 
-- tuple 참조: get<<i>i>(tuple)
+- tuple 참조: get〈i〉(tuple)
 
 
 
