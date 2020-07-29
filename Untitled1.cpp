@@ -1,13 +1,14 @@
 #include <iostream>
 #include <map>
+#include <vector>
+#include <set>
 
 using namespace std;
 
 int main(){
-    multimap<int,int> a;
+    /*multimap<int,int> a;
     map<int,int> b;
     a.insert(pair<int,int>(1,2));
-    //a[3] = 4;
     b.insert(pair<int,int>(1,2));
     b[3] = 4;
 
@@ -19,7 +20,35 @@ int main(){
     for(auto i=b.begin(); i!=b.end(); i++){
         cout<<i->first<<" ";
         cout<<i->second<<endl;
-    }
+    }*/
+    /*
+    vector<int> a = {1,2,3,4,5};
+    auto iter = a.begin();
+    iter += 3;
+    cout<<*iter<<endl;
+    a.erase(iter);
+    cout<<*iter<<endl;
+    iter++;
+    if(iter == a.end()) cout<<"oo"<<endl;
+    cout<<*iter<<endl;*/
+
+
+    string a = "abcde";
+    cout<<a.size()<<endl;
+    cout<<a.length()<<endl;
+    if(a[0] == 'a') cout<<"yes"<<endl;
+
+    /*
+    set<int> b;
+    b.insert(2);
+    b.insert(1);
+    b.insert(3);
+    cout<<*(++b.begin())<<endl;
+    vector<int> c;
+    c.push_back(0);
+    c[0] = *b.begin();*/
+
+
 
     return 0;
 }
