@@ -32,11 +32,11 @@ int main(){
     if(iter == a.end()) cout<<"oo"<<endl;
     cout<<*iter<<endl;*/
 
-
+    /*
     string a = "abcde";
     cout<<a.size()<<endl;
     cout<<a.length()<<endl;
-    if(a[0] == 'a') cout<<"yes"<<endl;
+    if(a[0] == 'a') cout<<"yes"<<endl;*/
 
     /*
     set<int> b;
@@ -47,6 +47,14 @@ int main(){
     vector<int> c;
     c.push_back(0);
     c[0] = *b.begin();*/
+
+    /*
+    if( "ABC" < "BCD") cout<<"ABC가 크다"<<endl;
+    else cout<<"BCD가 크다"<<endl;*/
+
+    map<int,int> x;
+    x[1] = 2;
+    x[
 
 
 
