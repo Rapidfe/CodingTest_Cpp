@@ -52,9 +52,11 @@ int main(){
     if( "ABC" < "BCD") cout<<"ABC가 크다"<<endl;
     else cout<<"BCD가 크다"<<endl;*/
 
-    map<int,int> x;
-    x[1] = 2;
-    x[
+    map<string,int> ss;
+    ss["11"] = 1;
+    ss["22"] = 2;
+    ss["33"] = 3;
+    cout<<ss["11"]<<endl;
 
 
 

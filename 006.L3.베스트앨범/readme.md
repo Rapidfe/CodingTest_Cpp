@@ -4,7 +4,7 @@ https://programmers.co.kr/learn/courses/30/lessons/42579
 
 - map의 value로 정렬하기는 어렵다 (vector로 복사해서 정렬함)
 - map의 key는 변경이 어렵다 (삭제하고 새로 insert)
-- map의 value 참조: iterator->second
+- map의 value 참조: iterator->second / m1[key]
 - multimap은 insert로만 삽입 ("m1.[key] = value" 불가)
 
 ---- tuple 사용법 ----
