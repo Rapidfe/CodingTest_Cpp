@@ -52,11 +52,16 @@ int main(){
     if( "ABC" < "BCD") cout<<"ABC가 크다"<<endl;
     else cout<<"BCD가 크다"<<endl;*/
 
+    /*
     map<string,int> ss;
     ss["11"] = 1;
     ss["22"] = 2;
     ss["33"] = 3;
-    cout<<ss["11"]<<endl;
+    cout<<ss["11"]<<endl;*/
+
+    vector<int> a = {1,2,3,4,5};
+    auto iter = a.begin();
+    cout<<*iter<<" "<<*(iter+4)<<" "<<*((++iter)-1)<<endl;
 
 
 

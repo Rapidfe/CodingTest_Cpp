@@ -1,6 +1,20 @@
 random access iterator가 지원되는 자료구조 ?
+=> vector, deque
 
 힙 : 최대값 또는 최소값을 root 노드에 놓아서, 최대값과 최소값을 바로 꺼내 쓸 수 있도록 하는 것
-      이진 트리
-      이진 탐색 트리랑은 다름
-priority queue : 
+     이진 트리
+     이진 탐색 트리랑은 다름
+     max heap = root최대값 / min heap = root최소값
+priority queue : < int, vector<int>, less<int> >
+                                     greater<int>
+                 push / pop / top
+vector : push_back / pop_back / front / back / resize
+deque : vector와 달리 삽입시 메모리 재할당이 적음
+        push_front / push_back / pop_front / pop_back
+        insert / erase
+set : insert / erase / find / count
+map : insert / erase / find / count
+                key
+                iter
+      multimap : lower_bound / upper_bound / equal_range (첫번째 / 마지막 / 범위pair)
+list : 
