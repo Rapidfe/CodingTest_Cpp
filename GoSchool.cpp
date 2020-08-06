@@ -1,6 +1,9 @@
 #include <iostream>
-#include <string>
 #include <vector>
+
+//초등학교식 최단경로 개수 구하기
+//오른쪽, 아래쪽 이동만 고려
+//원래는 왼쪽, 위쪽도 고려해야 할듯
 
 using namespace std;
 
@@ -9,7 +12,7 @@ int solution(int m, int n, vector<vector<int>> puddles) {
 
     int modulo = 1000000007;
     vector<vector<int>> arr(n);
-    vector<int> water(m*n);
+    vector<int> water(m*n,0);
     for(auto i : puddles){
         water[ (i[1]-1)*m+i[0]-1 ] = 1;
     }
@@ -25,7 +28,7 @@ int solution(int m, int n, vector<vector<int>> puddles) {
     for(int i=1; i<m; i++){
         for(int j=1; j<n; j++){
             if(water[j*m+i] == 1) arr[j].push_back(0);
-            arr[j].push_back( (arr[j-1][i]+arr[j][i-1])%modulo );
+            else arr[j].push_back( (arr[j-1][i]+arr[j][i-1])%modulo );
         }
     }
     answer = *((*(arr.end()-1)).end()-1);
