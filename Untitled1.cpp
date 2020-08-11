@@ -59,9 +59,28 @@ int main(){
     ss["33"] = 3;
     cout<<ss["11"]<<endl;*/
 
-    vector<int> a = {1,2,3,4,5};
-    auto iter = a.begin();
-    cout<<*iter<<" "<<*(iter+4)<<" "<<*((++iter)-1)<<endl;
+    int lines;
+    vector<pair<string,int>> articles;
+    vector<vector<string>> words;
+
+    cin>>lines;
+    words.resize(lines);
+    for(int i=0; i<lines; i++){
+        string id;
+        int num;
+        cin>>id>>num;
+        articles.push_back(make_pair(id, num));
+        for(int j=0; j<num; j++){
+            string word;
+            cin>>word;
+            cout<<word<<endl;
+            words[i].push_back(word);
+            cout<<words[i][0]<<endl;
+        }
+    }
+    for(string i : words[0]){
+        cout<<i<<endl;
+    }
 
 
 
