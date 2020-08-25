@@ -18,3 +18,14 @@ map : insert / erase / find / count
                 iter
       multimap : lower_bound / upper_bound / equal_range (첫번째 / 마지막 / 범위pair)
 list : 
+hash table은 왜
+
+https://m.blog.naver.com/PostView.nhn?blogId=psd0217&logNo=220308769007&proxyReferer=https:%2F%2Fwww.google.com%2F
+간단하게 쓰고 싶을때는 배열~
+동적으로 쓰고 싶다 vector 나 list~
+여기서 번호(key)로 찾고 싶으면(랜덤검색) vector를 쓰고
+중간에 값을 넣거나 빼고 싶으면 list를 써라
+만약 검색을 자주 할거 같으면 map을 쓸것이고(정렬되있음)(삽입삭제 자주 하지 말것)
+key만 필요하면 set을 써라(정렬되있음)
+검색이 빈번하고 데이터가 많으면 hash_map을 쓸것이고(정렬안함)
+이또한 key만 필요 하다면 hash_set을 써라!(정렬안함)

@@ -59,7 +59,7 @@ int main(){
     ss["33"] = 3;
     cout<<ss["11"]<<endl;*/
 
-    int lines;
+    /*int lines;
     vector<pair<string,int>> articles;
     vector<vector<string>> words;
 
@@ -80,7 +80,11 @@ int main(){
     }
     for(string i : words[0]){
         cout<<i<<endl;
-    }
+    }*/
+
+    int i;
+    for(i=0; i!=2 && i!=4; i++);
+    cout<<i;
 
 
 
