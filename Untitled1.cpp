@@ -2,10 +2,28 @@
 #include <map>
 #include <vector>
 #include <set>
+#include <list>
 
 using namespace std;
 
 int main(){
+    list<int> li;
+    li.push_back(1);
+    li.push_back(2);
+    li.push_back(3);
+    li.push_back(4);
+    li.push_back(5);
+    li.push_back(6);
+    for(auto j=li.begin(); j!=li.end(); j++){
+        int i = *j;
+        cout<<i<<endl;
+        if(i == 3){
+            j++;
+            li.remove(i);
+            j--;
+        }
+    }
+
     /*multimap<int,int> a;
     map<int,int> b;
     a.insert(pair<int,int>(1,2));
@@ -81,10 +99,6 @@ int main(){
     for(string i : words[0]){
         cout<<i<<endl;
     }*/
-
-    int i;
-    for(i=0; i!=2 && i!=4; i++);
-    cout<<i;
 
 
 
