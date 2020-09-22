@@ -3,10 +3,22 @@
 #include <vector>
 #include <set>
 #include <list>
+#include <algorithm>
 
 using namespace std;
 
 int main(){
+    vector<int> tmp;
+    tmp.push_back(1);
+    tmp.push_back(2);
+    tmp.push_back(2);
+    auto iter = find(tmp.rbegin(), tmp.rend(), 2);
+    int tttt = *iter;
+    *iter = tmp[0];
+    tmp[0] = tttt;
+    cout<<tmp[0]<<tmp[1]<<tmp[2];
+
+    /*
     list<int> li;
     li.push_back(1);
     li.push_back(2);
@@ -22,7 +34,7 @@ int main(){
             li.remove(i);
             j--;
         }
-    }
+    }*/
 
     /*multimap<int,int> a;
     map<int,int> b;
